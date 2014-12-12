@@ -47,13 +47,15 @@ void setup()                    // run once, when the sketch starts
 // Global variables go here...
 
 
-Point p1 = {1,1};
-Point mazeArray[576] = {p1};
-// Point mazeArray[8][8];
+Point mazeArray[576]};
+Point mazeArray[1][1];
 
 void drawScreen()
 {
-  for (int i = 0; i < 576; i++)
+ DrawPx(1,1,Green);
+ DrawPx(1,2,Green);
+ 
+for (int i = 0; i < 576; i++)
   {
     if (mazeArray[i].x >= 0 &&
         mazeArray[i].x <= 7 &&
