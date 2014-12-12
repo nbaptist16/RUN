@@ -47,27 +47,47 @@ void setup()                    // run once, when the sketch starts
 // Global variables go here...
 
 
-
-Point mazeArray[150];
+Point p1 = {1,1};
+Point mazeArray[576] = {p1};
 // Point mazeArray[8][8];
 
-DrawScreen()
+void drawScreen()
 {
-  for (int i = 0; i < 150; i++)
+  for (int i = 0; i < 576; i++)
   {
     if (mazeArray[i].x >= 0 &&
         mazeArray[i].x <= 7 &&
         mazeArray[i].y >= 0 &&
         mazeArray[i].y <= 7)
     {
-      DrawPx(mazeArray[i].x, mazeArray[i].y, Yellow);
+      DrawPx(mazeArray[i].x, mazeArray[i].y, Green);
     }
   }
 }
 
 void loop()
 {
-  DrawPx(3,3,DimRed);  // PLAYER
+  DrawPx(2,2,Yellow);  // PLAYER
+  
+  DrawPx(3,10,Red);  // OBSTACLES
+  DrawPx(3,11,Red);
+  DrawPx(18,10,Red);
+  DrawPx(18,11,Red);
+  DrawPx(19,14,Red);
+  DrawPx(19,15,Red);
+  DrawPx(19,16,Red);
+  DrawPx(22,16,Red);
+  DrawPx(22,17,Red);
+  DrawPx(23,1,Red);
+  DrawPx(23,2,Red);
+  DrawPx(23,3,Red);
+  DrawPx(23,4,Red);
+  DrawPx(23,5,Red);
+  DrawPx(23,9,Red);
+  DrawPx(23,10,Red);
+  
+  drawScreen();
+  
   DisplaySlate();
   delay(125);
   ClearSlate();
