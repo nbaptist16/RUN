@@ -46,9 +46,22 @@ void setup()                    // run once, when the sketch starts
 
 // Global variables go here...
 
+/*
+Point mazeArray[24row][24column] =
+{
+  _
+}
+*/
 
-Point mazeArray[576]};
-Point mazeArray[1][1];
+Point mazeArray[10][10] =
+{
+  {0,0,0,1,1,1,1,0},  // sample, yo.
+  {1,1,1,0,0,0,1,1},
+  
+}
+
+// below: DrawPx (x,y,screen[x][y]}
+
 
 void drawScreen()
 {
