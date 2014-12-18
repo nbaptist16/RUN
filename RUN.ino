@@ -41,34 +41,42 @@
 
 void setup()                    // run once, when the sketch starts
 {
-  MeggyJrSimpleSetup();      // Required code, line 2 of 2.
+  MeggyJrSimpleSetup();    // Required code, line 2 of 2.
+  Serial.begin(9600); 
 }
 
 // Global variables go here...
+int i = 0;
 
 /*
 Point mazeArray[24row][24column] =
 {
-  _
+  {#,#<#...#},
+  {#,#...
 }
 */
 
-Point mazeArray[10][10] =
+int mazeArray[12][12] =
 {
-  {0,0,0,1,1,1,1,0},  // sample, yo.
-  {1,1,1,0,0,0,1,1},
+  {0,0,0,0,0,0,0,0,0,0,0,0},  // maze
+  {0,4,4,4,4,0,4,4,4,4,4,4},
+  {0,4,0,0,4,0,4,0,0,0,0,0},
+  {0,4,0,0,4,0,4,0,0,0,0,0},
+  {0,4,0,0,4,0,4,0,0,4,4,4},
+  {0,4,0,0,4,0,4,0,0,4,0,0},
+  {0,4,0,0,4,0,4,0,0,4,0,0},
+  {0,4,0,0,4,0,4,0,0,4,4,4},
+  {0,4,0,0,4,0,4,0,0,0,0,0},
+  {0,4,0,0,4,0,4,0,0,0,0,0},
+  {0,4,0,1,4,0,4,4,4,4,4,4},
+  {4,0,1,4,0,0,0,0,0,0,0,4},
   
-}
+};
 
 // below: DrawPx (x,y,screen[x][y]}
-
-
-void drawScreen()
+void drawMaze()
 {
- DrawPx(1,1,Green);
- DrawPx(1,2,Green);
- 
-for (int i = 0; i < 576; i++)
+  for (int i = 0; i < 576; i++)
   {
     if (mazeArray[i].x >= 0 &&
         mazeArray[i].x <= 7 &&
@@ -80,31 +88,13 @@ for (int i = 0; i < 576; i++)
   }
 }
 
-void loop()
+
+
+
+
+void loop()                     // run over and over again
 {
   DrawPx(2,2,Yellow);  // PLAYER
-  
-  DrawPx(3,10,Red);  // OBSTACLES
-  DrawPx(3,11,Red);
-  DrawPx(18,10,Red);
-  DrawPx(18,11,Red);
-  DrawPx(19,14,Red);
-  DrawPx(19,15,Red);
-  DrawPx(19,16,Red);
-  DrawPx(22,16,Red);
-  DrawPx(22,17,Red);
-  DrawPx(23,1,Red);
-  DrawPx(23,2,Red);
-  DrawPx(23,3,Red);
-  DrawPx(23,4,Red);
-  DrawPx(23,5,Red);
-  DrawPx(23,9,Red);
-  DrawPx(23,10,Red);
-  
-  drawScreen();
-  
+  drawMaze();
   DisplaySlate();
-  delay(125);
-  ClearSlate();
 }
-  
