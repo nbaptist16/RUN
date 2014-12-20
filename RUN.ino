@@ -56,8 +56,8 @@ int mazeArray[12][12] =
   {4,0,1,4,0,0,0,0,0,0,0,4}
 };
 
-int offsetX = 0;
-int offsetY = 0;
+int offsetX = 1;
+int offsetY = 1;
 
 void setup()                    // run once, when the sketch starts
 {
@@ -99,9 +99,9 @@ for (int i = 0; i < 576; i++)
 void loop()                     // run over and over again
 {
   ClearSlate();
-  for (int i = -3; i < 5; i++)
+  for (int i = -2; i < 9; i++)
   {
-    for (int j = -4; j < 4; j++)
+    for (int j = -2; j < 9; j++)
     {
       int x = i + offsetX;
       int y = j + offsetY;
@@ -110,4 +110,23 @@ void loop()                     // run over and over again
   }
   DrawPx(2,2,Yellow);  // draw PLAYER over background
   DisplaySlate();
+  
+  CheckButtonsDown();
+  
+  if (Button_Right)
+  {
+    offsetX++;
+  }
+  if (Button_Left)
+  {
+    offsetX--;
+  }
+  if (Button_Up)
+  {
+    offsetY++;
+  }
+  if (Button_Down)
+  {
+    offsetY--;
+  }
 }
