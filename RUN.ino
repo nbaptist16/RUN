@@ -97,21 +97,28 @@ for (int i = 0; i < 576; i++)
 
 
 void loop()                     // run over and over again
-{
+{ 
   ClearSlate();
-  for (int i = -2; i < 9; i++)
+  for (int i = -3; i < 5; i++)
   {
-    for (int j = -2; j < 9; j++)
+    for (int j = -4; j < 4; j++)
     {
       int x = i + offsetX;
       int y = j + offsetY;
-      DrawPx(x,y, mazeArray[x][y]);
+      
+      Serial.print("i is ");
+      Serial.println(i);  //ln = line
+      Serial.print("j is ");
+      Serial.println(j);
+      Serial.println();
+      
+      DrawPx(i,j, mazeArray[x][y]);
     }
   }
   DrawPx(2,2,Yellow);  // draw PLAYER over background
   DisplaySlate();
   
-  CheckButtonsDown();
+  CheckButtonsPress();
   
   if (Button_Right)
   {
