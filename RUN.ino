@@ -99,19 +99,19 @@ for (int i = 0; i < 576; i++)
 void loop()                     // run over and over again
 { 
   ClearSlate();
-  for (int i = -3; i < 5; i++)
+  for (int i = 0; i < 7; i++)
   {
-    for (int j = -4; j < 4; j++)
+    for (int j = 0; j < 7; j++)
     {
       int x = i + offsetX;
       int y = j + offsetY;
-      
+      /*
       Serial.print("i is ");
       Serial.println(i);  //ln = line
       Serial.print("j is ");
       Serial.println(j);
       Serial.println();
-      
+     */
       DrawPx(i,j, mazeArray[x][y]);
     }
   }
