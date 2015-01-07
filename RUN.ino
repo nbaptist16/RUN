@@ -152,5 +152,20 @@ void loop()                     // run over and over again
     offsetY--;
   }
   
+    
+  if (ReadPx (2,2) == Green)  // lose lives
+  {
+    Tone_Start(ToneG3, 250);
+    Tone_Start(ToneFs3, 250);
+  }
+   
+  
   // if player is on "warp panel" (25,7), warp back to start (2,2); speed++
+  
+  // if player is at mazeArray [x][y] == Green > die (restart)
+    // play tone: d, c#, a#
+    
+    /*above = pseudo code since I'm having touble since technically the player isn't
+    moving and the maze is an array*/
+  
 }
